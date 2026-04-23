@@ -1,0 +1,25 @@
+// Firebase configuration
+// Replace the values below with your actual Firebase project config
+// Get these from: Firebase Console → Your Project → Project Settings → General → Your apps
+
+import { initializeApp } from 'firebase/app'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+}
+
+const app = initializeApp(firebaseConfig)
+
+export const auth = getAuth(app)
+export const googleProvider = new GoogleAuthProvider()
+export const db = getFirestore(app)
+
+googleProvider.addScope('profile')
+googleProvider.addScope('email')

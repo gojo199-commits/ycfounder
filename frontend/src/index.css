@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+:root {
+  --orange: #FF6600;
+  --orange-hover: #FF8C00;
+  --card-bg: #111111;
+  --border-orange: rgba(255, 102, 0, 0.4);
+  --border-orange-light: rgba(255, 102, 0, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 4px;
+}
+
+/* Custom input styles */
+.input-field {
+  @apply w-full bg-black border border-[#FF6600]/40 text-white rounded-lg px-4 py-3 
+    focus:outline-none focus:ring-2 focus:ring-[#FF6600] focus:border-[#FF6600] 
+    placeholder:text-gray-600 transition-all duration-200;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.25);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-[#FF6600] text-black font-semibold rounded-lg px-6 py-3 
+    hover:bg-[#FF8C00] transition-all duration-200 cursor-pointer;
+}
+
+.btn-outline {
+  @apply border border-[#FF6600] text-[#FF6600] font-semibold rounded-lg px-6 py-3 
+    hover:bg-[#FF6600] hover:text-black transition-all duration-200 cursor-pointer;
+}
+
+/* Card styles */
+.card {
+  @apply bg-[#111111] border border-[#FF6600]/40 rounded-xl p-6;
+}
+
+/* Pill styles */
+.pill {
+  @apply border border-[#FF6600] text-[#FF6600] rounded-full px-4 py-2 text-sm 
+    cursor-pointer transition-all duration-150 select-none;
+}
+
+.pill.selected {
+  @apply bg-[#FF6600] text-black font-semibold;
+}
+
+.pill:hover:not(.selected) {
+  @apply bg-[#FF6600]/10;
+}
